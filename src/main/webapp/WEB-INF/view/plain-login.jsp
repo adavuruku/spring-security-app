@@ -26,9 +26,17 @@
 		</c:if>
 		<!-- checking for logout since 
 			spring security provide ?logout url -->
+			
+			
 		<c:if test="${param.logout != null }">
 			<i>You have been logged out</i>
 		</c:if>
+		
+		<!-- if u are using plain <form/> tag
+		you will have to add csrf token manually
+		<input type="hidden"
+		 name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		 -->
 		<form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="POST">
 			User Name : <input type="text" name="username"/>
 			<br/><br/>
