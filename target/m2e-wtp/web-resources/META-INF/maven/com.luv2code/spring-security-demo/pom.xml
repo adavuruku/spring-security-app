@@ -11,10 +11,12 @@
 
 	<properties>
 		<springframework.version>5.0.2.RELEASE</springframework.version>
-
+		<hibernate.version>5.4.1.Final</hibernate.version>
+		<mysql.connector.version>5.1.45</mysql.connector.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<springsecurity.version>5.0.0.RELEASE</springsecurity.version>
+		<c3po.version>0.9.5.2</c3po.version>
 	</properties>
 
 	<dependencies>
@@ -71,6 +73,27 @@
 		    <version>2.3.0</version>
 		</dependency>
 
+		 <!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<!-- MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+		
+		
+		<!-- C3PO for connection Pool-->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>${c3po.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

@@ -10,6 +10,20 @@
 		<p>Welcome To Our Page</p>
 		<p>User: <security:authentication property="principal.username" /></p>
 		<p>Role(s): <security:authentication property="principal.authorities" /></p>
+		
+		<!-- Add a link to point to /systems this is for admin -->
+		<security:authorize access="hasRole('ADMIN')">
+		
+		<p>
+			<a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a> (Only For Admin Peeps)
+		</p>
+		</security:authorize>
+		<!-- Add a link to point to/leaders this is for managers -->
+		<security:authorize access="hasRole('MANAGER')">
+			<p>
+				<a href="${pageContext.request.contextPath}/leaders">LeaderShip Meeting</a> (Only For Managers Peeps)
+			</p>
+		</security:authorize>
 		<form:form action="${pageContext.request.contextPath}/logout" method="POST">
 			
 			<input type="submit" value="Log Out"/>
