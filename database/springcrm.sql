@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2021 at 12:52 AM
+-- Generation Time: Jan 26, 2021 at 01:21 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -81,7 +81,7 @@ INSERT INTO `customer` (`id`, `first_name`, `last_name`, `email`) VALUES
 
 CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `enabled` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -90,9 +90,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `password`, `enabled`) VALUES
-('john', '{noop}test123', 1),
-('mary', '{noop)test123', 1),
-('susan', '{noop}test123', 1);
+('john', '$2a$12$2zcLhCqX9vTxh74ueha6b.gw.MziwWOe7skXTBl0yuXCjIZOOiTvm', 1),
+('mary', '$2a$12$2zcLhCqX9vTxh74ueha6b.gw.MziwWOe7skXTBl0yuXCjIZOOiTvm', 1),
+('susan', '$2a$12$2zcLhCqX9vTxh74ueha6b.gw.MziwWOe7skXTBl0yuXCjIZOOiTvm', 1);
 
 --
 -- Indexes for dumped tables
